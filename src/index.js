@@ -1,6 +1,21 @@
-const fullname = document.getElementById("fullname");
-console.log("CONTENT NOT YET LOADED!", fullname); //what will fullname evaluate to?
-
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("CONTENT LOADED!");
-});
+  fetch("https://randomuser.me/api/")
+    .then( res => res.json() )
+    .then(data => 
+      {data.results.forEach((attributes) => 
+      grabInfo(attributes))
+      }  
+    )}
+)
+
+function grabInfo(event){
+  // const labelFor = event.
+  const grablabels = document.querySelectorAll("label")
+  for(let i = 0; i < grablabels.length; i++){
+    const grabFor = grablabels[i].innerHTML
+
+    console.log(grabFor)
+  }
+
+  
+}
